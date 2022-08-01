@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'Order.apps.OrderConfig',
+    'FoodItem.apps.FooditemConfig',
     'Restaurant.apps.RestaurantConfig',
     'Customer.apps.CustomerConfig',
     'RestaurantManager.apps.RestaurantmanagerConfig',
