@@ -8,3 +8,5 @@ class FoodItem(models.Model):
     price = models.IntegerField(default = 0)
     r_id = models.ForeignKey(Restaurant_models.Restaurant, on_delete = models.CASCADE)
     
+    def __str__(self):
+        return self.name
