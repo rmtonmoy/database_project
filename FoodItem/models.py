@@ -10,3 +10,7 @@ class FoodItem(models.Model):
     
     def __str__(self):
         return self.name
+        
+        
+def getFoodItem(restaurant):
+    return FoodItem.objects.filter(r_id = restaurant)
