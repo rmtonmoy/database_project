@@ -21,9 +21,9 @@ def signaction(request):
             if key=="password":
                 pwd =value
         
-    customer = Customer(name = first_name + last_name, address = email, password = pwd)
-    if(len(customer.name) > 0):
-        customer.save() 
+        customer = Customer(name = first_name + last_name, address = email, password = pwd)
+        if(len(customer.name) > 0):
+            customer.save() 
 
 
     return render(request,'registration.html')

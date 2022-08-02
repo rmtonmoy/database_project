@@ -1,0 +1,9 @@
+{% if result %}
+    <ul>
+    {% for res in result %}
+        <li><a href="">{{ res.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
