@@ -9,3 +9,6 @@ class AddressHistory(models.Model):
     c_id = models.ForeignKey(Customer_models.Customer, on_delete = models.CASCADE)
     a_id = models.ForeignKey(DeliveryAddress_models.DeliveryAddress, on_delete = models.CASCADE)
     
+    
+def get_UsedAddresses(customer):
+    return AddressHistory.objects.filter(c_id = customer)

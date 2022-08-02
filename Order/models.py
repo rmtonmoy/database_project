@@ -10,3 +10,6 @@ class Order(models.Model):
     c_id = models.ForeignKey(Customer_models.Customer, on_delete = models.CASCADE)
     r_id = models.ForeignKey(Restaurant_models.Restaurant, on_delete = models.CASCADE)
     
+
+def getOrder(customer):
+    return Order.objects.filter(c_id = customer)

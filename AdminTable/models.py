@@ -10,3 +10,7 @@ class AdminTable(models.Model):
     m_id = models.ForeignKey(RestaurantManager_models.RestaurantManager, on_delete = models.CASCADE)
     r_id = models.ForeignKey(Restaurant_models.Restaurant, on_delete = models.CASCADE)
     
+    
+
+def get_Admin(restaurant):
+    return AdminTable.objects.filter(r_id = restaurant)

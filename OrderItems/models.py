@@ -12,3 +12,6 @@ class OrderItems(models.Model):
     o_id = models.ForeignKey(Order_models.Order, on_delete = models.CASCADE)
     f_id = models.ForeignKey(FoodItem_models.FoodItem, on_delete = models.CASCADE)
     
+
+def get_OrderItems(order):
+    return OrderItems.objects.filter(o_id = order)
