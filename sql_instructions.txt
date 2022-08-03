@@ -20,11 +20,12 @@ join FoodItem_fooditem as f_i)
 where f_i.r_id_id = r.id; 
 
 # See menu from all of the restaurants
+
 select r.name as Restaurant_name, f_i.name as Food_name, price
 from(Restaurant_restaurant as r  
 join FoodItem_fooditem as f_i) 
 where f_i.r_id_id = r.id
-group by r.name; 
+order by r.name; 
 
 
 # See order history for a specific Customer
