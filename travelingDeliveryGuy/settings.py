@@ -31,6 +31,15 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'AddressHistory.apps.AddresshistoryConfig',
+    'OrderItems.apps.OrderitemsConfig',
+    'AdminTable.apps.AdmintableConfig',
+    'Order.apps.OrderConfig',
+    'FoodItem.apps.FooditemConfig',
+    'Restaurant.apps.RestaurantConfig',
+    'Customer.apps.CustomerConfig',
+    'RestaurantManager.apps.RestaurantmanagerConfig',
+    'DeliveryAddress.apps.DeliveryaddressConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

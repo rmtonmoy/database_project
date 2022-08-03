@@ -1,0 +1,46 @@
+
+# Run the console
+sqlite3 db.sqlite3
+.headers ON
+.mode column
+
+# See all tables
+.tables
+
+# Clear Screen
+CTRL + L
+
+# See all restaurants
+select * from Restaurant_restaurant;
+
+# See menu from a specific restaurant
+select r.name as Restaurant_name, f_i.name as Food_name, price
+from( (select * from Restaurant_restaurant as r where (r.name="PandaExpress")) as r  
+join FoodItem_fooditem as f_i) 
+where f_i.r_id_id = r.id; 
+
+# See menu from all of the restaurants
+select r.name as Restaurant_name, f_i.name as Food_name, price
+from(Restaurant_restaurant as r  
+join FoodItem_fooditem as f_i) 
+where f_i.r_id_id = r.id
+order by r.name; 
+
+
+# See order history for a specific Customer
+select o.id as Order_id, date, c.name as Customer_name, r.name as Restaurant_name
+from( (select * from Customer_customer as c where (c.name="customer_a")) as c  
+join Order_order as o join Restaurant_restaurant as r) 
+where o.c_id_id = c.id and o.r_id_id = r.id; 
+
+# See delivery addresses related to a specific customer
+select c.name as customer_name, a.address as address
+from(AddressHistory_addresshistory as AH join Customer_customer as c join DeliveryAddress_deliveryaddress as a)
+where AH.c_id_id = c.id and AH.a_id_id = a.id;
+
+
+# See the list of admins for a specific restaurant
+select r.name as restaurant_name, m.name as admin_name
+from(AdminTable_admintable as AT join Restaurant_restaurant as r join RestaurantManager_restaurantmanager as m)
+where AT.m_id_id = m.id and AT.r_id_id = r.id;
+
